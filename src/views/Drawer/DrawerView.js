@@ -133,11 +133,9 @@ export default class DrawerView<T: *> extends PureComponent<void, Props, void> {
       'DrawerClose'
     );
 
+    // $FlowFixMe
     const options = this.props.router.getScreenOptions(
-      addNavigationHelpers({
-        state: this._screenNavigationProp.state,
-        dispatch: this._screenNavigationProp.dispatch,
-      }),
+      this._screenNavigationProp,
       this.props.screenProps,
     );
 
